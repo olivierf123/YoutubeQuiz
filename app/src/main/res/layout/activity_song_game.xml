@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SongGameActivity"
+    android:orientation="vertical"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.YoutubeQuiz.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_songGame"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.YoutubeQuiz.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:layout_marginTop="64dp"
+        android:id="@+id/youtube_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+    </com.google.android.youtube.player.YouTubePlayerView>
+
+<!--    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView-->
+<!--        android:id="@+id/youtube_player_view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+
+<!--        app:videoId="qzcGfN9S_QY"-->
+<!--        app:autoPlay="false"-->
+<!--        app:showFullScreenButton="false" />-->
+
+
+    <Button
+        android:id="@+id/click_to_start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/answer_button_shape"
+        android:text="Click to Start"
+        android:textColor="#cdd0d6"
+        android:textSize="15sp"></Button>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/english_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/answer_button_shape"
+            android:text="English"
+            android:textColor="#cdd0d6"
+            android:textSize="15sp"></Button>
+
+        <Button
+            android:id="@+id/french_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/answer_button_shape"
+            android:shadowRadius="5"
+            android:text="French"
+            android:textColor="#cdd0d6"
+            android:textSize="15sp"></Button>
+
+        <Button
+            android:id="@+id/spanish_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/answer_button_shape"
+            android:shadowRadius="5"
+            android:text="Spanish"
+            android:textColor="#cdd0d6"
+            android:textSize="15sp"></Button>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

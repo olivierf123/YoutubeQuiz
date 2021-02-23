@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "915014048350",
+    "project_id": "languagegame-69b02",
+    "storage_bucket": "languagegame-69b02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915014048350:android:2f70814aa6b4294eba32cf",
+        "android_client_info": {
+          "package_name": "android.example.youtubequiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "915014048350-68mi8g08m48m6v2u6e72ocu7og61guu1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "android.example.youtubequiz",
+            "certificate_hash": "bb473e3af013120016883185d75835bffaa78a5c"
+          }
+        },
+        {
+          "client_id": "915014048350-l888aj257i4lvedqv89ooucrebd20dor.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSVFR12ecWUaCssEnBe_yvrogRaOGCyT4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "915014048350-l888aj257i4lvedqv89ooucrebd20dor.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
