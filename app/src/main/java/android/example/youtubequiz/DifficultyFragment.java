@@ -16,7 +16,7 @@ import android.view.ViewGroup;
  *
  */
 
-//TODO REPLACE ACTIVITY POUR CE FRAGMENT LA A PLACE DAVOIR UN NEW ACTIVIT DIFFICULTY ????
+//TODO. Fragment actuellement vide. REPLACE ACTIVITY POUR CE FRAGMENT LA A PLACE DAVOIR UN NEW ACTIVIT DIFFICULTY ????
 
 public class DifficultyFragment extends Fragment {
 

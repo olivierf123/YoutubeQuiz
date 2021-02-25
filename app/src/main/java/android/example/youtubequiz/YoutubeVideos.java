@@ -1,8 +1,12 @@
 package android.example.youtubequiz;
 
 import java.util.HashMap;
+import java.util.Random;
 
 public class YoutubeVideos {
+
+    public static YoutubeVideos youtubevideos = new YoutubeVideos();
+
     private String English = "English";
     private String French = "French";
     private String Spanish = "Spanish";
@@ -125,5 +129,7 @@ public class YoutubeVideos {
         return videos;
 
     }
+
+
 
 }

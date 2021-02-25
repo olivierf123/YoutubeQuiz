@@ -8,6 +8,8 @@ public class PlayerModel {
     private int PlayerScore;
     private int scoretoAdd;
     public static int numberOfLives=1;
+    public static int rightAnswers;
+    public static int wrongAnswers;
 
     public PlayerModel(String username, String email, int PlayerScore) {
         this.username = username;
@@ -57,4 +59,30 @@ public class PlayerModel {
     public static void setNumberOfLives(int numberOfLives) {
         PlayerModel.numberOfLives = numberOfLives;
     }
+
+    public static int getRightAnswers() {
+        return rightAnswers;
+    }
+
+    public static void setRightAnswers(int rightAnswers) {
+        PlayerModel.rightAnswers = rightAnswers;
+    }
+
+    public static int getWrongAnswers() {
+        return wrongAnswers;
+    }
+
+    public static void setWrongAnswers(int wrongAnswers) {
+        PlayerModel.wrongAnswers = wrongAnswers;
+    }
+
+    public static void addrightAnswers(){
+       PlayerModel.setRightAnswers(PlayerModel.getRightAnswers()+1);
+    }
+
+    public static void addWrongAnswers(){
+        PlayerModel.setWrongAnswers(PlayerModel.getWrongAnswers()+1);
+    }
+
+
 }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:id="@+id/youtube_player_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:useWebUi="true" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:layout_height="wrap_content">
+
+    <android.widget.Button
+        android:id="@+id/english_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:background="@drawable/answer_button_shape"
+        android:text="English"
+        android:textColor="#cdd0d6"
+        android:textSize="15sp"></android.widget.Button>
+
+    <android.widget.Button
+        android:id="@+id/french_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/answer_button_shape"
+        android:shadowRadius="5"
+        android:text="French"
+        android:textColor="#cdd0d6"
+        android:textSize="15sp"></android.widget.Button>
+
+    <android.widget.Button
+        android:id="@+id/spanish_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/answer_button_shape"
+        android:shadowRadius="5"
+        android:text="Spanish"
+        android:textColor="#cdd0d6"
+        android:textSize="15sp"></android.widget.Button>
+    </LinearLayout>
+
+</FrameLayout>

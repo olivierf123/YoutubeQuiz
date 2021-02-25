@@ -135,8 +135,8 @@
 
     <RadioGroup
         android:id="@+id/radiogroup_lives"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
+        android:layout_width="222dp"
+        android:layout_height="69dp"
         android:layout_marginBottom="32dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -147,31 +147,40 @@
 
         <RadioButton
             android:id="@+id/lives_radiob_1"
-            android:checked="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1 lives"
-            android:textAppearance="?android:textAppearanceMedium"
-            tools:layout_editor_absoluteX="267dp"
-            tools:layout_editor_absoluteY="635dp" />
+            android:layout_height="match_parent"
+            android:background="@mipmap/ic_heart_1"
+            android:button="@null"
+            android:checked="true"
+            android:textAppearance="?android:textAppearanceMedium" />
 
         <RadioButton
+
             android:id="@+id/lives_radiob_3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3 Lives"
-            android:textAppearance="?android:textAppearanceMedium"
-            tools:layout_editor_absoluteX="177dp"
-            tools:layout_editor_absoluteY="635dp" />
+            android:layout_height="match_parent"
+            android:background="@mipmap/ic_heart_3"
+            android:button="@null"
+            android:textAppearance="?android:textAppearanceMedium" />
 
         <RadioButton
             android:id="@+id/lives_radiob_5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="5 life"
-            android:textAppearance="?android:textAppearanceMedium"
-            tools:layout_editor_absoluteX="107dp"
-            tools:layout_editor_absoluteY="634dp" />
+            android:layout_height="match_parent"
+            android:background="@mipmap/ic_heart_5"
+            android:button="@null"
+            android:textAppearance="?android:textAppearanceMedium" />
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/number_oflives_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Number of lives"
+        app:layout_constraintBottom_toTopOf="@+id/radiogroup_lives"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/difficulty_cardview_3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

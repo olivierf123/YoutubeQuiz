@@ -16,6 +16,13 @@
     <color name="colorTextInputBackground">#F7F7F7</color>
     <color name="actionbarOpacity">#00000000</color>
 
+    <color name="coloRed">#ff3943</color>
+    <color name="colorRedDark">#801b20</color>
+    <color name="colorGreenLight">#abffc0</color>
+    <color name="colorGreen">#247b37</color>
+    <color name="colorGreen1">#3eb959</color>
+    <color name="colorWhite">#ffffff</color>
+
     <!--reds-->
     <color name="md_red_50">#FFEBEE</color>
     <color name="md_red_100">#FFCDD2</color>

@@ -102,8 +102,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
         //Menu Drawer listener
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
