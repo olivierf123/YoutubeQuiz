@@ -115,8 +115,6 @@
             </androidx.cardview.widget.CardView>
 
 
-<!--            TODO borderless button not showing. Changing le style du Bouton : button_forgot_password-->
-
             <Button
                 style="@style/TextyButton"
                 android:id="@+id/button_forgot_password"

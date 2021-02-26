@@ -58,7 +58,6 @@ public class SongGameFragment extends Fragment {
         btnFrench = (Button) view.findViewById(R.id.french_button);
         btnSpanish = (Button) view.findViewById(R.id.spanish_button);
 
-
         //Create epicdialog (wrong/right answer)
         epicDialog = new Dialog(getActivity());
 

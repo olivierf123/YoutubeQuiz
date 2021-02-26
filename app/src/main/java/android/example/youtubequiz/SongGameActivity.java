@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 
+import com.cengalabs.flatui.FlatUI;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerListener;
 
 import java.util.Random;
@@ -21,8 +22,6 @@ import java.util.Random;
 public class SongGameActivity extends AppCompatActivity {
 
     private FrameLayout main_frame;
-
-    //TODO METTRE YOUTUBE EN FRAGMENT ET LORSQUE RÉPONSE CORRECT OUVRIR UN AUTRE FRAGMENT AVEC NOM AUTEUR ETC...
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +32,7 @@ public class SongGameActivity extends AppCompatActivity {
 
         setFragment(new SongGameFragment());
 
+
     }
 
     private void setFragment(Fragment fragment){
@@ -42,7 +42,5 @@ public class SongGameActivity extends AppCompatActivity {
         transaction.commit();
 
     }
-
-
 
 }

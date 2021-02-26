@@ -16,8 +16,6 @@ import android.view.ViewGroup;
  *
  */
 
-//TODO. Fragment actuellement vide. REPLACE ACTIVITY POUR CE FRAGMENT LA A PLACE DAVOIR UN NEW ACTIVIT DIFFICULTY ????
-
 public class DifficultyFragment extends Fragment {
 
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

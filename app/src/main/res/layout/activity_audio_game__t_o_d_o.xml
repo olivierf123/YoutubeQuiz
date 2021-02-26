@@ -6,4 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".AudioGameActivity_TODO">
 
+
+    <ImageView
+        android:id="@+id/actualimage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/actualtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ALLOOOOOOOOOOOOggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"
+        app:layout_constraintBottom_toBottomOf="@+id/actualimage"
+        app:layout_constraintEnd_toEndOf="@+id/actualimage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/actualimage">
+
+    </TextView>
 </androidx.constraintlayout.widget.ConstraintLayout>

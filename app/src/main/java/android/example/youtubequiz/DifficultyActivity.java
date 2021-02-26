@@ -1,6 +1,7 @@
 package android.example.youtubequiz;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
 import android.animation.AnimatorSet;
@@ -31,6 +32,7 @@ public class DifficultyActivity extends AppCompatActivity {
     private RadioButton radioB1,radioB2,radioB3;
     private RadioGroup radiogroup;
     private String numberofLivesSelected;
+    private Toolbar mActionBarToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,11 @@ public class DifficultyActivity extends AppCompatActivity {
         RadioButton radioButton2 = findViewById(R.id.lives_radiob_3);
         RadioButton radioButton3 = findViewById(R.id.lives_radiob_5);
 
+        //Set toolbar Title
+        mActionBarToolbar = (Toolbar) findViewById(R.id.toolbar_difficulty);
+        setSupportActionBar(mActionBarToolbar);
+        getSupportActionBar().setTitle(getString(R.string.app_name));
+
         radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -54,19 +61,28 @@ public class DifficultyActivity extends AppCompatActivity {
                     PlayerModel.setNumberOfLives(1);
                     PlayerModel.setRightAnswers(0);
                     PlayerModel.setWrongAnswers(0);
-                    radioButtonAnimate(radioButton1);
+                   radioButton1.setBackgroundResource(R.mipmap.ic_heart_green_1_round);
+                    radioButton2.setBackgroundResource(R.mipmap.ic_heart_3_round);
+                    radioButton3.setBackgroundResource(R.mipmap.ic_heart_5_round);
+
 
                 }else if (checkedId == R.id.lives_radiob_3){
                     PlayerModel.setNumberOfLives(3);
                     PlayerModel.setRightAnswers(0);
                     PlayerModel.setWrongAnswers(0);
-                    radioButtonAnimate(radioButton2);
+                    radioButton1.setBackgroundResource(R.mipmap.ic_heart_1_round);
+                    radioButton2.setBackgroundResource(R.mipmap.ic_heart_green_3_round);
+                    radioButton3.setBackgroundResource(R.mipmap.ic_heart_5_round);
+
 
                 }else if (checkedId == R.id.lives_radiob_5){
                     PlayerModel.setNumberOfLives(5);
                     PlayerModel.setRightAnswers(0);
                     PlayerModel.setWrongAnswers(0);
-                    radioButtonAnimate(radioButton3);
+                    radioButton3.setBackgroundResource(R.mipmap.ic_heart_green_5_round);
+                    radioButton1.setBackgroundResource(R.mipmap.ic_heart_1_round);
+                    radioButton2.setBackgroundResource(R.mipmap.ic_heart_3_round);
+
 
                 }
             }
@@ -98,16 +114,17 @@ public class DifficultyActivity extends AppCompatActivity {
 
     }
 
-    public void radioButtonAnimate(RadioButton radiobutton){
-        ObjectAnimator scaleDown = ObjectAnimator.ofPropertyValuesHolder(
-                radiobutton,
-                PropertyValuesHolder.ofFloat("scaleX", 1.3f),
-                PropertyValuesHolder.ofFloat("scaleY", 1.3f));
+//    public void radioButtonAnimate(RadioButton radiobutton){
+//        ObjectAnimator scaleDown = ObjectAnimator.ofPropertyValuesHolder(
+//                radiobutton,
+//                PropertyValuesHolder.ofFloat("scaleX", 1.3f),
+//                PropertyValuesHolder.ofFloat("scaleY", 1.3f));
+//
+//        scaleDown.setDuration(500);
+//        scaleDown.setRepeatMode(ValueAnimator.REVERSE);
+//        scaleDown.setRepeatCount(2);
+//        scaleDown.start();
+//    }
 
-        scaleDown.setDuration(500);
-        scaleDown.setRepeatMode(ValueAnimator.REVERSE);
-        scaleDown.setRepeatCount(2);
-        scaleDown.start();
-    }
 
 }

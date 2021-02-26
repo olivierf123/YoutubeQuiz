@@ -46,7 +46,7 @@ public class PlayerModel {
     }
 
     //Modify player score in the Database
-    public void addScore(int scoretoAdd){
+    public static void addScore(int scoretoAdd){
         FirebaseQuery.g_firestore.collection("USERS")
                 .document(FirebaseAuth.getInstance().getUid())
                 .update("USER_SCORE",FirebaseQuery.player.getPlayerScore()+scoretoAdd);

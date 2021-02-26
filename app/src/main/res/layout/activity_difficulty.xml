@@ -7,13 +7,10 @@
     tools:context=".DifficultyActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.YoutubeQuiz.AppBarOverlay"
-        app:layout_constraintBottom_toTopOf="@+id/difficulty_cardview_1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:theme="@style/Theme.YoutubeQuiz.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_difficulty"
@@ -28,8 +25,10 @@
         android:id="@+id/difficulty_cardview_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/md_blue_500"
         android:layout_margin="16dp"
-        android:layout_marginTop="100dp"
+        android:elevation="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:translationZ="3dp"
         app:cardCornerRadius="8dp"
@@ -39,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,8 +64,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/difficulty_cardview_2"
+        android:elevation="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/md_yellow_500"
         android:layout_margin="16dp"
         android:translationZ="3dp"
         app:cardCornerRadius="8dp"
@@ -101,11 +102,13 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/difficulty_cardview_3"
         android:layout_width="match_parent"
+        android:elevation="8dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:translationZ="3dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="5dp"
+        app:cardBackgroundColor="@color/md_red_500"
         app:cardUseCompatPadding="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -149,7 +152,7 @@
             android:id="@+id/lives_radiob_1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@mipmap/ic_heart_1"
+            android:background="@mipmap/ic_heart_green_1_round"
             android:button="@null"
             android:checked="true"
             android:textAppearance="?android:textAppearanceMedium" />
@@ -172,15 +175,5 @@
             android:textAppearance="?android:textAppearanceMedium" />
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/number_oflives_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:text="Number of lives"
-        app:layout_constraintBottom_toTopOf="@+id/radiogroup_lives"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/difficulty_cardview_3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
