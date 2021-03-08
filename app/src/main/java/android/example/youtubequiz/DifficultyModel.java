@@ -2,6 +2,8 @@ package android.example.youtubequiz;
 
 public class DifficultyModel {
 
+    public static String difficultyGame;
+
     private String difficulty;
 
     public DifficultyModel(String difficulty) {
@@ -16,4 +18,11 @@ public class DifficultyModel {
         this.difficulty = difficulty;
     }
 
+    public static String getDifficultyGame() {
+        return difficultyGame;
+    }
+
+    public static void setDifficultyGame(String difficultyGame) {
+        DifficultyModel.difficultyGame = difficultyGame;
+    }
 }

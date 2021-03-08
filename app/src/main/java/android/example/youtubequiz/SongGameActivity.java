@@ -22,6 +22,7 @@ import java.util.Random;
 public class SongGameActivity extends AppCompatActivity {
 
     private FrameLayout main_frame;
+    private String difficultyFromItent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class SongGameActivity extends AppCompatActivity {
         main_frame = findViewById(R.id.song_game_FLFragment);
 
         setFragment(new SongGameFragment());
+
 
 
     }

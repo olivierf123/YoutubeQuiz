@@ -29,39 +29,70 @@
         android:layout_marginTop="80dp"
         android:layout_height="wrap_content">
 
+        <android.widget.Button
+            android:id="@+id/Button4_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:elevation="15dp"
+            android:layout_gravity="center"
+            android:background="@drawable/answer_button_shape"
+            android:text="Button 4"
+            android:textColor="#cdd0d6"
+            android:textSize="15sp"></android.widget.Button>
+
     <android.widget.Button
-        android:id="@+id/english_button"
+        android:id="@+id/Button1_answer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:elevation="15dp"
         android:layout_marginBottom="20dp"
         android:layout_gravity="center"
         android:background="@drawable/answer_button_shape"
-        android:text="English"
+        android:text="Button 1"
         android:textColor="#cdd0d6"
         android:textSize="15sp"></android.widget.Button>
 
+
     <android.widget.Button
-        android:id="@+id/french_button"
+        android:id="@+id/Button2_answer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
         android:background="@drawable/answer_button_shape"
         android:shadowRadius="5"
-        android:text="French"
+        android:text="Button 2"
+        android:elevation="15dp"
         android:textColor="#cdd0d6"
         android:textSize="15sp"></android.widget.Button>
 
     <android.widget.Button
-        android:id="@+id/spanish_button"
+        android:id="@+id/Button3_answer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/answer_button_shape"
         android:shadowRadius="5"
-        android:text="Spanish"
+        android:elevation="15dp"
+        android:layout_marginBottom="20dp"
+        android:text="Button 3"
         android:textColor="#cdd0d6"
         android:textSize="15sp"></android.widget.Button>
+
+        <android.widget.Button
+            android:id="@+id/Button5_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="15dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"
+            android:background="@drawable/answer_button_shape"
+            android:text="Button 5"
+            android:textColor="#cdd0d6"
+            android:textSize="15sp"></android.widget.Button>
+
+
     </LinearLayout>
 
 </FrameLayout>

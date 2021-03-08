@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,17 +28,30 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.ui.PlayerUiControlle
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class SongGameFragment extends Fragment {
 
     private YouTubePlayerView youtubePlayerView;
-    private Button btnEnglish, btnFrench, btnSpanish, btnPositiveNextQuestion, btnNegativeNextQuestion;
+    private Button btnAnswer1, btnAnswer2, btnAnswer3, btnAnswer4,btnAnswer5,
+            btnPositiveNextQuestion, btnNegativeNextQuestion;
+
     private PlayerUiController playerUiController;
     private TextView titleTv, messageTv;
     private YouTubePlayerView youtubeplayer;
     private Dialog epicDialog;
-    private String randomVid = (String) YoutubeVideos.youtubevideos.getVideos().keySet().toArray()[new Random().nextInt(YoutubeVideos.youtubevideos.getVideos().keySet().toArray().length)];
+    private String randomVid ;
+    private String difficultyFromIntent;
+    private ArrayList<String> easyList;
+    private ArrayList<String> mediumList;
+    private ArrayList<String> hardList;
+
+    //TODO a la place du total score pour le player, mettre le Highest score dans une game pour le leadeboard.
+
 
     public SongGameFragment() {
         // Required empty public constructor
@@ -54,49 +68,294 @@ public class SongGameFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_song_game, container, false);
         youtubeplayer = (YouTubePlayerView) view.findViewById(R.id.youtube_player_view);
-        btnEnglish = (Button) view.findViewById(R.id.english_button);
-        btnFrench = (Button) view.findViewById(R.id.french_button);
-        btnSpanish = (Button) view.findViewById(R.id.spanish_button);
+
 
         //Create epicdialog (wrong/right answer)
         epicDialog = new Dialog(getActivity());
 
         initYouTubePlayerView();
+        //randomVid = (String) YoutubeVideos.youtubevideos.getVideos().keySet().toArray()[new Random().nextInt(YoutubeVideos.youtubevideos.getVideos().keySet().toArray().length)];
 
-        btnEnglish.setOnClickListener(v -> {
 
-             if (YoutubeVideos.youtubevideos.getVideos().get(randomVid).equals("English")) {
-                 showPositivePopup();
-                 PlayerModel.addrightAnswers();
-             }else {
-                 PlayerLosingLives(); // Player loses a life and looks if player lost the game
-                 PlayerModel.addWrongAnswers();
-             }
-        });
 
-        btnFrench.setOnClickListener(v -> {
-            if (YoutubeVideos.youtubevideos.getVideos().get(randomVid).equals("French")){
-                showPositivePopup();
-                PlayerModel.addrightAnswers();
+        //Set buttons
+        btnAnswer1 = (Button) view.findViewById(R.id.Button1_answer);
+        btnAnswer2 = (Button) view.findViewById(R.id.Button2_answer);
+        btnAnswer3 = (Button) view.findViewById(R.id.Button3_answer);
+        btnAnswer5 = (Button) view.findViewById(R.id.Button5_answer);
+        btnAnswer4 = (Button) view.findViewById(R.id.Button4_answer);
 
-            }else{
-                PlayerLosingLives(); // Player loses a life and looks if player lost the game
-                PlayerModel.addWrongAnswers();
+        //Making Lists
+        easyList = new ArrayList<>();
+        mediumList = new ArrayList<>();
+        hardList = new ArrayList<>();
+
+
+        //If game difficulty is set to Easy
+       if (DifficultyModel.getDifficultyGame().equals("easy")){
+           //Get a random vid from the easyList
+           easyList = getEasyList(YoutubeVideos.youtubevideos.getVideos());
+           Random rand = new Random();
+           randomVid = easyList.get(rand.nextInt(easyList.size()));
+
+       }
+
+       //If game difficulty is set to Medium
+        if (DifficultyModel.getDifficultyGame().equals("medium")){
+            //Get a random vid from the easyList
+            mediumList = getMediumList(YoutubeVideos.youtubevideos.getVideos());
+            Random rand = new Random();
+            randomVid = mediumList.get(rand.nextInt(mediumList.size()));
+
+        }
+
+        //If game difficulty is set to Hard
+        if (DifficultyModel.getDifficultyGame().equals("hard")){
+           //TODO
+
+
+        }
+
+
+
+        /***
+         * Easy Difficulty
+         */
+
+        // EASY MODE : 3 languages choices
+
+        if(DifficultyModel.getDifficultyGame().equals("easy")){
+
+            //Hide button 4 and 5
+            btnAnswer5.setVisibility(view.GONE);
+            btnAnswer4.setVisibility(view.GONE);
+
+            //Create a List of easy languages (English, french, spanish, arabe, japonais, allemand, russe)
+            ArrayList<String> pickEasyLanguage = new ArrayList<>();
+            pickEasyLanguage.add("English");
+            pickEasyLanguage.add("French");
+            pickEasyLanguage.add("Spanish");
+            pickEasyLanguage.add("Arabic");
+            pickEasyLanguage.add("Japanese");
+            pickEasyLanguage.add("German");
+            pickEasyLanguage.add("Russian");
+
+            //returns the language of the random video
+            String randomVidLanguage = YoutubeVideos.youtubevideos.getVideos().get(randomVid);
+
+            //Set answer language in a random button between the 3 answer buttons
+            Random rand = new Random();
+            int randButton = rand.nextInt((3-1)+1) + 1;
+            if (randButton == 1){
+                btnAnswer1.setText(randomVidLanguage);
+            }else if (randButton == 2){
+                btnAnswer2.setText(randomVidLanguage);
+            }else if (randButton == 3){
+                btnAnswer3.setText(randomVidLanguage);
             }
 
-        });
-
-        btnSpanish.setOnClickListener(v -> {
-            if (YoutubeVideos.youtubevideos.getVideos().get(randomVid).equals("Spanish")){
-                showPositivePopup();
-                PlayerModel.addrightAnswers();
-
-            }else{
-               PlayerLosingLives(); // Player loses a life and looks if player lost the game
-                PlayerModel.addWrongAnswers();
+            //Get 2 other random languages for the 2 other buttons
+            Random rand2 = new Random();
+            String randomLanguage = pickEasyLanguage.get(rand2.nextInt(pickEasyLanguage.size()));
+            //While loop to make sure it's not the same language that is randomized
+            while (randomLanguage.equals(randomVidLanguage)){
+                randomLanguage = pickEasyLanguage.get(rand2.nextInt(pickEasyLanguage.size()));
+            }
+            String randomLanguage2 = pickEasyLanguage.get(rand2.nextInt(pickEasyLanguage.size()));
+            while (randomLanguage2.equals(randomVidLanguage) | randomLanguage2.equals(randomLanguage)){
+                randomLanguage2 = pickEasyLanguage.get(rand2.nextInt(pickEasyLanguage.size()));
             }
 
-        });
+            //Set the random selected languages to the buttons
+            if ((btnAnswer1.getText().equals(randomVidLanguage))){
+                btnAnswer2.setText(randomLanguage);
+                btnAnswer3.setText(randomLanguage2);
+            }else if (btnAnswer2.getText().equals(randomVidLanguage)){
+                btnAnswer1.setText(randomLanguage);
+                btnAnswer3.setText(randomLanguage2);
+            }else if (btnAnswer3.getText().equals(randomVidLanguage)){
+                btnAnswer1.setText(randomLanguage);
+                btnAnswer2.setText(randomLanguage2);
+            }
+
+
+            btnAnswer1.setOnClickListener(v -> {
+                //TODO change le equals pour que ca fonctionne
+
+                if (randomVidLanguage.equals(btnAnswer1.getText())) {
+                    showPositivePopup();
+                    PlayerModel.addrightAnswers();
+                }else {
+                    PlayerLosingLives(); // Player loses a life and looks if player lost the game
+                    PlayerModel.addWrongAnswers();
+                }
+            });
+
+
+            btnAnswer2.setOnClickListener(v -> {
+                if (randomVidLanguage.equals(btnAnswer2.getText())){
+                    showPositivePopup();
+                    PlayerModel.addrightAnswers();
+
+                }else{
+                    PlayerLosingLives(); // Player loses a life and looks if player lost the game
+                    PlayerModel.addWrongAnswers();
+                }
+
+            });
+
+            btnAnswer3.setOnClickListener(v -> {
+                if (randomVidLanguage.equals(btnAnswer3.getText())){
+                    showPositivePopup();
+                    PlayerModel.addrightAnswers();
+
+                }else{
+                    PlayerLosingLives(); // Player loses a life and looks if player lost the game
+                    PlayerModel.addWrongAnswers();
+                }
+
+            });
+        }
+
+
+        /***
+         * Medium Difficulty (1 random language from each language family list
+         */
+
+        if(DifficultyModel.getDifficultyGame().equals("medium")){
+             btnAnswer5.setVisibility(view.GONE);
+
+            //returns the language of the random video
+            String randomVidLanguage = YoutubeVideos.youtubevideos.getVideos().get(randomVid);
+
+
+            //Set answer language in a random button between the 4 answer buttons
+            Random rand = new Random();
+            int randButton = rand.nextInt((4-1)+1) + 1;
+            if (randButton == 1){
+                btnAnswer1.setText(randomVidLanguage);
+            }else if (randButton == 2){
+                btnAnswer2.setText(randomVidLanguage);
+            }else if (randButton == 3){
+                btnAnswer3.setText(randomVidLanguage);
+            }else if (randButton == 4) {
+                btnAnswer4.setText(randomVidLanguage);
+            }
+
+            //Get 3 other random languages for the 3 other buttons
+            Random rand2 = new Random();
+            String randomLanguage = YoutubeVideos.youtubevideos.getAllLanguages().
+                    get(rand2.nextInt(YoutubeVideos.youtubevideos.getAllLanguages().size()));
+
+            //While loop to make sure it's not the same language that is randomized
+            while (randomLanguage.equals(randomVidLanguage)){
+                randomLanguage = YoutubeVideos.youtubevideos.getAllLanguages().
+                        get(rand2.nextInt(YoutubeVideos.youtubevideos.getAllLanguages().size()));
+            }
+
+            String randomLanguage2 = YoutubeVideos.youtubevideos.getAllLanguages().
+                    get(rand2.nextInt(YoutubeVideos.youtubevideos.getAllLanguages().size()));
+
+            while (randomLanguage2.equals(randomVidLanguage) | randomLanguage2.equals(randomLanguage)){
+                randomLanguage2 = YoutubeVideos.youtubevideos.
+                        getAllLanguages().get(rand2.nextInt(YoutubeVideos.youtubevideos.getAllLanguages().size()));
+            }
+
+            String randomLanguage3 = YoutubeVideos.youtubevideos.getAllLanguages().get(rand2.nextInt(YoutubeVideos.youtubevideos.getAllLanguages().size()));
+
+            while (randomLanguage3.equals(randomVidLanguage) | randomLanguage3.equals(randomLanguage) | randomLanguage3.equals(randomLanguage2)){
+                randomLanguage3 = YoutubeVideos.youtubevideos.
+                        getAllLanguages().get(rand2.nextInt(YoutubeVideos.youtubevideos.getAllLanguages().size()));
+
+            }
+
+            //Set the random selected languages to the buttons
+            if ((btnAnswer1.getText().equals(randomVidLanguage))){
+                btnAnswer2.setText(randomLanguage);
+                btnAnswer3.setText(randomLanguage2);
+                btnAnswer4.setText(randomLanguage3);
+            }else if (btnAnswer2.getText().equals(randomVidLanguage)){
+                btnAnswer1.setText(randomLanguage);
+                btnAnswer3.setText(randomLanguage2);
+                btnAnswer4.setText(randomLanguage3);
+            }else if (btnAnswer3.getText().equals(randomVidLanguage)){
+                btnAnswer1.setText(randomLanguage);
+                btnAnswer2.setText(randomLanguage2);
+                btnAnswer4.setText(randomLanguage3);
+            }else if (btnAnswer4.getText().equals(randomVidLanguage)){
+                btnAnswer1.setText(randomLanguage);
+                btnAnswer2.setText(randomLanguage2);
+                btnAnswer3.setText(randomLanguage3);
+
+            }
+
+                btnAnswer1.setOnClickListener(v -> {
+
+                    if (randomVidLanguage.equals(btnAnswer1.getText())) {
+                        showPositivePopup();
+                        PlayerModel.addrightAnswers();
+                    }else {
+                        PlayerLosingLives(); // Player loses a life and looks if player lost the game
+                        PlayerModel.addWrongAnswers();
+                    }
+                });
+
+
+                btnAnswer2.setOnClickListener(v -> {
+                    if (randomVidLanguage.equals(btnAnswer2.getText())){
+                        showPositivePopup();
+                        PlayerModel.addrightAnswers();
+
+                    }else{
+                        PlayerLosingLives(); // Player loses a life and looks if player lost the game
+                        PlayerModel.addWrongAnswers();
+                    }
+
+                });
+
+                btnAnswer3.setOnClickListener(v -> {
+                    if (randomVidLanguage.equals(btnAnswer3.getText())){
+                        showPositivePopup();
+                        PlayerModel.addrightAnswers();
+
+                    }else{
+                        PlayerLosingLives(); // Player loses a life and looks if player lost the game
+                        PlayerModel.addWrongAnswers();
+                    }
+
+                });
+
+                btnAnswer4.setOnClickListener(v -> {
+                    if (randomVidLanguage.equals(btnAnswer4.getText())){
+                        showPositivePopup();
+                        PlayerModel.addrightAnswers();
+
+                    }else{
+                        PlayerLosingLives(); // Player loses a life and looks if player lost the game
+                        PlayerModel.addWrongAnswers();
+                    }
+
+
+                });
+
+
+
+            }
+
+
+
+        /***
+         * Hard Difficulty
+         */
+
+            if(DifficultyModel.getDifficultyGame().equals("hard")){
+
+                //TODO HARD MODE : 5 langues, même family
+
+            }
+
+
+
        return view;
 
     }
@@ -181,6 +440,74 @@ public class SongGameFragment extends Fragment {
         transaction.commit();
 
     }
+
+    //Get the list of easy langauges (English, french, spanish, arabe, japonais, allemand, russe)
+    public ArrayList<String> getEasyList(HashMap<String, String> myhashmap){
+
+        ArrayList<String> easyList = new ArrayList<>();
+
+        for (Map.Entry<String, String> entry: myhashmap.entrySet()){
+            if(entry.getValue().equals("English")) {
+                easyList.add(entry.getKey());
+
+            }else if (entry.getValue().equals("French")){
+                easyList.add(entry.getKey());
+
+            }else if ((entry.getValue().equals("Spanish"))){
+                easyList.add(entry.getKey());
+
+            }else if ((entry.getValue().equals("Arabic"))){
+                easyList.add(entry.getKey());
+
+            }else if((entry.getValue().equals("Japanese"))){
+                easyList.add(entry.getKey());
+
+            }else if ((entry.getValue().equals("German"))){
+                easyList.add(entry.getKey());
+
+            }else if ((entry.getValue().equals("Russian"))){
+                easyList.add(entry.getKey());
+            }
+        }
+
+        return easyList;
+    }
+
+
+    //Get the list of Medium Languages. Picks 1 language per family of language lists.
+    public ArrayList<String> getMediumList(HashMap<String, String> myhashmap){
+        ArrayList<String> mediumList = new ArrayList<>();
+        Random rand = new Random();
+        String vidFamily1 = YoutubeVideos.youtubevideos.getFamily1().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily1().size()));
+        String vidFamily2 = YoutubeVideos.youtubevideos.getFamily2().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily2().size()));
+        String vidFamily3 = YoutubeVideos.youtubevideos.getFamily3().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily3().size()));
+        String vidFamily4 = YoutubeVideos.youtubevideos.getFamily4().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily4().size()));
+
+        for (Map.Entry<String, String> entry: myhashmap.entrySet()){
+            if(entry.getValue().equals(vidFamily1)) {
+                mediumList.add(entry.getKey());
+
+            }else if (entry.getValue().equals(vidFamily2)){
+                mediumList.add(entry.getKey());
+
+            }else if (entry.getValue().equals(vidFamily3)){
+                mediumList.add(entry.getKey());
+
+            }else if (entry.getValue().equals(vidFamily4)){
+                mediumList.add(entry.getKey());
+            }
+        }
+        return mediumList;
+
+    }
+
+    public void getHardHashMap(){
+        // TODO
+
+
+
+    }
+
 
 }
 

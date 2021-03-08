@@ -39,6 +39,8 @@ public class DifficultyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_difficulty);
 
+        DifficultyModel.setDifficultyGame("easy");
+
         difficultyView1 = findViewById(R.id.difficulty_cardview_1);
         difficultyView2 = findViewById(R.id.difficulty_cardview_2);
         difficultyView3 = findViewById(R.id.difficulty_cardview_3);
@@ -61,7 +63,7 @@ public class DifficultyActivity extends AppCompatActivity {
                     PlayerModel.setNumberOfLives(1);
                     PlayerModel.setRightAnswers(0);
                     PlayerModel.setWrongAnswers(0);
-                   radioButton1.setBackgroundResource(R.mipmap.ic_heart_green_1_round);
+                    radioButton1.setBackgroundResource(R.mipmap.ic_heart_green_1_round);
                     radioButton2.setBackgroundResource(R.mipmap.ic_heart_3_round);
                     radioButton3.setBackgroundResource(R.mipmap.ic_heart_5_round);
 
@@ -91,6 +93,7 @@ public class DifficultyActivity extends AppCompatActivity {
         difficultyView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                DifficultyModel.setDifficultyGame("easy");
                 Intent intent = new Intent(DifficultyActivity.this, SongGameActivity.class );
                 startActivity(intent);
             }
@@ -99,6 +102,7 @@ public class DifficultyActivity extends AppCompatActivity {
         difficultyView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                DifficultyModel.setDifficultyGame("medium");
                 Intent intent = new Intent(DifficultyActivity.this, SongGameActivity.class );
                 startActivity(intent);
             }
@@ -107,6 +111,7 @@ public class DifficultyActivity extends AppCompatActivity {
         difficultyView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                DifficultyModel.setDifficultyGame("hard");
                 Intent intent = new Intent(DifficultyActivity.this, SongGameActivity.class );
                 startActivity(intent);
             }
@@ -114,17 +119,6 @@ public class DifficultyActivity extends AppCompatActivity {
 
     }
 
-//    public void radioButtonAnimate(RadioButton radiobutton){
-//        ObjectAnimator scaleDown = ObjectAnimator.ofPropertyValuesHolder(
-//                radiobutton,
-//                PropertyValuesHolder.ofFloat("scaleX", 1.3f),
-//                PropertyValuesHolder.ofFloat("scaleY", 1.3f));
-//
-//        scaleDown.setDuration(500);
-//        scaleDown.setRepeatMode(ValueAnimator.REVERSE);
-//        scaleDown.setRepeatCount(2);
-//        scaleDown.start();
-//    }
 
 
 }

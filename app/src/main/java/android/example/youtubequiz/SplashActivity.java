@@ -28,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
         mAppLogo = findViewById(R.id.app_logo);
 
         //Animation of home screen
-        //TODO #1 MODIFIER LANIMATION ICI (ANIMATION DU HOME SCREEN). animation.xml. Faire un beau Splash home screen
+        //TODO changer ou enlever le splash art
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.animation);
         mAppName.setAnimation(anim);
         mAppLogo.setAnimation(anim);

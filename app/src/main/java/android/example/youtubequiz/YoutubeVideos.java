@@ -1,7 +1,14 @@
 package android.example.youtubequiz;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
+
+//TODO mettre un language selector dans le menu pour que le joueur choisse quel langue y veux jouer
+
+//TODO enlever le jeux de test et audio et mettre famille de langues as la place
+
 
 public class YoutubeVideos {
 
@@ -17,17 +24,17 @@ public class YoutubeVideos {
     private String video3 = "FndmvPkI1Ms";
     private String video4 = "VV5oVYVGfNc";
     private String video5 = "CAMWdvo71ls";
-    private String video6 = "CctG_0544vU";
+    private String video6 = "DTM8sTTfnLc";
     private String video7 = "aU_TQcyGkvY";
     private String video8 = "H7rhMqTQ4WI";
-    private String video9 = "oC_ffV";
+    private String video9 = "Yy6AG-Vu094";
     private String video10 = "INuD2D7R8bk";
     private String video11 = "rZz8r8ZE93I";
     private String video12 = "QLNr3_YNeJc";
     private String video13 = "Aq1PsFGssOg";
     private String video14 = "znSs7uEXCeo";
-    private String video15 = "WW31GErHH";
-
+    private String video15 = "CiC2jTwGmIc";
+    
     //Spanish songs
     private String video16 = "NUsoVlDFqZg";
     private String video17 = "YXnjy5YlDwk";
@@ -62,7 +69,7 @@ public class YoutubeVideos {
     private String video44 = "6GUm5g8SG4o";
     private String video45 = "56WBK4ZK_cw";
     private String video46 = "SlPhMPnQ58k";
-    private String video47 = "igNVdlXhKcI";
+    private String video47 = "gGdGFtwCNBE";
 
 
     //Ukranien:
@@ -188,22 +195,22 @@ public class YoutubeVideos {
     private String video151= "zm3wa2LtJQM";
 
     //Swedish songs
-    private String video151= "kbXvPs5ql68";
-    private String video151= "nqE8Um9t8CU";
-    private String video151= "_p1D63vj0ss";
-    private String video151= "HInYeg78sMU";
-    private String video151= "W_eepOSos88";
-    private String video151= "g2yzdDAZBLI";
-    private String video151= "hvkShLKfl54";
-    private String video151= "MDO6BZs6o-k";
-    private String video151= "aOXw9Vfz14I";
-    private String video151= "uwh2WXbqilk";
-    private String video151= "DmkM2QD8750";
-    private String video151= "1JWP464tYY4";
-    private String video151= "7U5ZUP36deI";
-    private String video151= "nJa1t5DfAN4";
-    private String video151= "Oyaa3kzfMpU";
-    private String video152 = "xfcDvOzU6pQ";
+    private String video492= "kbXvPs5ql68";
+    private String video493= "nqE8Um9t8CU";
+    private String video494= "_p1D63vj0ss";
+    private String video495= "HInYeg78sMU";
+    private String video496= "W_eepOSos88";
+    private String video497= "g2yzdDAZBLI";
+    private String video498= "hvkShLKfl54";
+    private String video499= "MDO6BZs6o-k";
+    private String video500= "aOXw9Vfz14I";
+    private String video501= "uwh2WXbqilk";
+    private String video502= "DmkM2QD8750";
+    private String video503= "1JWP464tYY4";
+    private String video504= "7U5ZUP36deI";
+    private String video505= "nJa1t5DfAN4";
+    private String video506= "Oyaa3kzfMpU";
+    private String video507= "xfcDvOzU6pQ";
 
     //Norwegian songs
 
@@ -260,23 +267,23 @@ public class YoutubeVideos {
     //Russian songs
     private String video198 = "9knYNjp95bs";
     private String video199 = "nidQCt_HEsY";
-    private String video200 = "wOBnq0Ewz5k";
+    private String video200 = "FUdteCBRX9c";
     private String video201 = "m-el0pQLQE4";
-    private String video202 = "Bx8Fo7WRpXg";
+    private String video202 = "Odbn1pIIpdw";
     private String video203 = "CMBmJ93Jqqg";
     private String video204 = "3pEsU-KYfGU";
     private String video205 = "6AsK2vGsL5Y";
     private String video206 = "ueYhI-bo-70";
-    private String video207 = "sW4srCj0bvY";
+    private String video207 = "E-H3Vxm7p80";
     private String video208 = "jAZt6-dN4SA";
-    private String video209 = "aqsgyOhrRMY";
-    private String video210 = "3bY_WY4pTBE";
-    private String video211 = "d4li3Bk95Co";
-    private String video212 = "6BTmk4i5Vl0";
+    private String video209 = "vvRJkjD7Ixg";
+    private String video210 = "a-GQDCtt1Vk";
+    private String video211 = "_TazBWWgOeQ";
+    private String video212 = "MBG3Gdt5OGs";
 
     //Bulgarian songs
-    private String video213 = "3vB4gpXVtIs";
-    private String video214 = "8-9aQ6eSPS8";
+    private String video213 = "P_Y7abspLSA";
+    private String video214 = "3kcT3g_u9oU";
     private String video215 = "0OqAd7hPr9E";
     private String video216 = "3SoJbrKbstc";
     private String video217 = "zUz9OBIuFrs";
@@ -300,7 +307,6 @@ public class YoutubeVideos {
     private String video232 = "bd3-DRZurNY";
     private String video233 = "9E6sP8znfwM";
     private String video234 = "Mq_QHBNz_hk";
-    //private String video235 = "wsl-KHGe4Kk"; pas de parole
     private String video235 = "9E6sP8znfwM";
     private String video236 = "pqnMkUcTmys";
     private String video237 = "LpiFmZLICgM";
@@ -314,7 +320,7 @@ public class YoutubeVideos {
 
     private String video242 = "Txip4rYPXcg";
     private String video243 = "1halUd8asmk";
-    private String video244 = "7mKnLVqDCIM";
+    private String video244 = "91CGA_Js7SU";
     private String video245 = "nuw6TLOEm7Q";
     private String video246 = "bWd6vNaAGYI";
     private String video247 = "-d4LvSDuHsQ";
@@ -591,106 +597,948 @@ public class YoutubeVideos {
     private String video490 = "IfNZi3LjNAU";
     private String video491 = "JJmexDKCklY";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    private ArrayList<String> langFamily1;
+    private ArrayList<String> langFamily2;
+    private ArrayList<String> langFamily3;
+    private ArrayList<String> langFamily4;
+    private ArrayList<String> allLanguages;
 
     private HashMap<String,String> videos;
 
     public YoutubeVideos() {
 
         videos = new HashMap<>();
+        langFamily1 = new ArrayList<>();
+        langFamily2 = new ArrayList<>();
+        langFamily3 = new ArrayList<>();
+        langFamily4 = new ArrayList<>();
+        allLanguages = new ArrayList<>();
+
+        //Add family 1 language
+        langFamily1.add(Spanish);
+        langFamily1.add("Catalan");
+        langFamily1.add("Galician");
+        langFamily1.add("Romanian");
+        langFamily1.add("Italian");
+        langFamily1.add("Portuguese");
+        langFamily1.add("Occitan");
+        langFamily1.add("Sicilian");
+        langFamily1.add("Sicilian");
+        langFamily1.add("Neapolitan");
+        langFamily1.add("Greek");
+        langFamily1.add("Basque");
+
+        //Add family 2 language
+        langFamily2.add("Arabic");
+        langFamily2.add("Amharic");
+        langFamily2.add("Hebrew");
+        langFamily2.add("Turkish");
+        langFamily2.add("Uzbek");
+        langFamily2.add("Azerbaijani");
+        langFamily2.add("Tajik");
+        langFamily2.add("Kazakh");
+        langFamily2.add("Turkmen");
+        langFamily2.add("Persian");
+
+        //Add family 3 language
+        langFamily3.add("Korean");
+        langFamily3.add("Mongolian");
+        langFamily3.add("Japanese");
+        langFamily3.add("Japanese");
+        langFamily3.add("Mandarin");
+        langFamily3.add("Vietnamese");
+        langFamily3.add("Cantonese");
+        langFamily3.add("Sanghainese");
+        langFamily3.add("Thai");
+        langFamily3.add("Laotian");
+        langFamily3.add("Hakka");
+
+
+        //Add family 4 language
+        langFamily4.add("Danish");
+        langFamily4.add("German");
+        langFamily4.add("Icelandic");
+        langFamily4.add("Swedish");
+        langFamily4.add("Faroese");
+        langFamily4.add("Norwegian");
+        langFamily4.add("Serbian");
+        langFamily4.add("Bulgarian");
+        langFamily4.add("Russian");
+        langFamily4.add("Polish");
+        langFamily4.add("Dutch");
+        langFamily4.add("Ukrainian");
+
+
+        //Add all langauges to allLanguages ArrayList
+        allLanguages.add(Spanish);
+        allLanguages.add("Catalan");
+        allLanguages.add("Galician");
+        allLanguages.add("Romanian");
+        allLanguages.add("Italian");
+        allLanguages.add("Portuguese");
+        allLanguages.add("Occitan");
+        allLanguages.add("Sicilian");
+        allLanguages.add("Sicilian");
+        allLanguages.add("Neapolitan");
+        allLanguages.add("Greek");
+        allLanguages.add("Basque");
+        allLanguages.add("Arabic");
+        allLanguages.add("Amharic");
+        allLanguages.add("Hebrew");
+        allLanguages.add("Turkish");
+        allLanguages.add("Uzbek");
+        allLanguages.add("Azerbaijani");
+        allLanguages.add("Tajik");
+        allLanguages.add("Kazakh");
+        allLanguages.add("Turkmen");
+        allLanguages.add("Persian");
+        allLanguages.add("Korean");
+        allLanguages.add("Mongolian");
+        allLanguages.add("Japanese");
+        allLanguages.add("Japanese");
+        allLanguages.add("Mandarin");
+        allLanguages.add("Vietnamese");
+        allLanguages.add("Cantonese");
+        allLanguages.add("Sanghainese");
+        allLanguages.add("Thai");
+        allLanguages.add("Laotian");
+        allLanguages.add("Hakka");
+        allLanguages.add("Danish");
+        allLanguages.add("German");
+        allLanguages.add("Icelandic");
+        allLanguages.add("Swedish");
+        allLanguages.add("Faroese");
+        allLanguages.add("Norwegian");
+        allLanguages.add("Serbian");
+        allLanguages.add("Bulgarian");
+        allLanguages.add("Russian");
+        allLanguages.add("Polish");
+        allLanguages.add("Dutch");
+        allLanguages.add("Ukrainian");
+
+
+
+
+
+
 
         //French songs
-        videos.put(video1,French);
-        videos.put(video2,French);
-        videos.put(video3,French);
-        videos.put(video4,French);
-        videos.put(video5,French);
-        videos.put(video6,French );
-        videos.put(video7,French );
-        videos.put(video8,French );
-        videos.put(video9,French );
-        videos.put(video10,French );
-        videos.put(video11,French );
-        videos.put(video12,French );
-        videos.put(video13,French );
-        videos.put(video14,French );
-        videos.put(video15,French );
+        videos.put(video1, French );
+        videos.put(video2, French );
+        videos.put(video3, French );
+        videos.put(video4, French );
+        videos.put(video5, French );
+        videos.put(video6, French );
+        videos.put(video7, French );
+        videos.put(video8, French );
+        videos.put(video9, French );
+        videos.put(video10, French );
+        videos.put(video11, French );
+        videos.put(video12, French );
+        videos.put(video13, French );
+        videos.put(video14, French );
+        videos.put(video15, French );
+        videos.put("CiC2jTwGmIc", French);
 
         //Spanish songs
-        videos.put(video16,Spanish );
-        videos.put(video17,Spanish );
-        videos.put(video18,Spanish );
-        videos.put(video19,Spanish );
-        videos.put(video20,Spanish );
-        videos.put(video21,Spanish );
-        videos.put(video22,Spanish );
-        videos.put(video23,Spanish );
-        videos.put(video24,Spanish );
-        videos.put(video25,Spanish );
-        videos.put(video26,Spanish );
-        videos.put(video27,Spanish );
-        videos.put(video28,Spanish );
-        videos.put(video29,Spanish );
-        videos.put(video30,Spanish );
-        videos.put(video31,Spanish );
+
+        videos.put(video16, Spanish );
+        videos.put(video17, Spanish );
+        videos.put(video18, Spanish );
+        videos.put(video19, Spanish );
+        videos.put(video20, Spanish );
+        videos.put(video21, Spanish );
+        videos.put(video22, Spanish );
+        videos.put(video23, Spanish );
+        videos.put(video24, Spanish );
+        videos.put(video25, Spanish );
+        videos.put(video26, Spanish );
+        videos.put(video27, Spanish );
+        videos.put(video28, Spanish );
+        videos.put(video29, Spanish );
+        videos.put(video30, Spanish );
+        videos.put(video31, Spanish );
 
         //English songs
-        videos.put(video32,English );
-        videos.put(video33,English );
-        videos.put(video34,English );
-        videos.put(video35,English );
-        videos.put(video36,English );
-        videos.put(video37,English );
-        videos.put(video38,English );
-        videos.put(video39,English );
-        videos.put(video40,English );
-        videos.put(video41,English );
-        videos.put(video42,English );
-        videos.put(video43,English );
-        videos.put(video44,English );
-        videos.put(video45,English );
-        videos.put(video46,English );
-        videos.put(video47,English );
+
+        videos.put(video32, English );
+        videos.put(video33, English );
+        videos.put(video34, English );
+        videos.put(video35, English );
+        videos.put(video36, English );
+        videos.put(video37, English );
+        videos.put(video38, English );
+        videos.put(video39, English );
+        videos.put(video40, English );
+        videos.put(video41, English );
+        videos.put(video42, English );
+        videos.put(video43, English );
+        videos.put(video44, English );
+        videos.put(video45, English );
+        videos.put(video46, English );
+        videos.put(video47, English );
+
 
         //Ukranien Songs
-        for (int i=48; i<=63; i++){
-            videos.put("video" + i, "Ukranien" );
-        }
+
+        videos.put(video48,"Ukrainian");
+        videos.put(video49,"Ukrainian");
+        videos.put(video50,"Ukrainian");
+        videos.put(video51,"Ukrainian");
+        videos.put(video52,"Ukrainian");
+        videos.put(video53,"Ukrainian");
+        videos.put(video54,"Ukrainian");
+        videos.put(video55,"Ukrainian");
+        videos.put(video56,"Ukrainian");
+        videos.put(video57,"Ukrainian");
+        videos.put(video58,"Ukrainian");
+        videos.put(video59,"Ukrainian");
+        videos.put(video60,"Ukrainian");
+        videos.put(video61,"Ukrainian");
+        videos.put(video62,"Ukrainian");
+        videos.put(video63,"Ukrainian");
 
         //Danish songs 64 to 79
-        for (int i=64; i<=79; i++){
-            videos.put("video" + i, "Danish" );
-        }
+        videos.put(video64,"Danish");
+        videos.put(video65,"Danish");
+        videos.put(video66,"Danish");
+        videos.put(video67,"Danish");
+        videos.put(video68,"Danish");
+        videos.put(video69,"Danish");
+        videos.put(video70,"Danish");
+        videos.put(video71,"Danish");
+        videos.put(video72,"Danish");
+        videos.put(video73,"Danish");
+        videos.put(video74,"Danish");
+        videos.put(video75,"Danish");
+        videos.put(video76,"Danish");
+        videos.put(video77,"Danish");
+        videos.put(video78,"Danish");
+        videos.put(video79,"Danish");
 
         //Turkish songs 80 to 94
-        for (int i=80; i<=94; i++){
-            videos.put("video" + i, "Turkish" );
-        }
+        videos.put(video80,"Turkish");
+        videos.put(video81,"Turkish");
+        videos.put(video82,"Turkish");
+        videos.put(video83,"Turkish");
+        videos.put(video84,"Turkish");
+        videos.put(video85,"Turkish");
+        videos.put(video86,"Turkish");
+        videos.put(video87,"Turkish");
+        videos.put(video88,"Turkish");
+        videos.put(video89,"Turkish");
+        videos.put(video90,"Turkish");
+        videos.put(video91,"Turkish");
+        videos.put(video92,"Turkish");
+        videos.put(video93,"Turkish");
+        videos.put(video94,"Turkish");
 
         //Romanian 95 to 108
-        for (int i=95; i<=108; i++){
-            videos.put("video" + i, "Romanian" );
-        }
+
+        videos.put(video95,"Romanian");
+        videos.put(video96,"Romanian");
+        videos.put(video97,"Romanian");
+        videos.put(video98,"Romanian");
+        videos.put(video99,"Romanian");
+        videos.put(video100,"Romanian");
+        videos.put(video101,"Romanian");
+        videos.put(video102,"Romanian");
+        videos.put(video103,"Romanian");
+        videos.put(video104,"Romanian");
+        videos.put(video105,"Romanian");
+        videos.put(video106,"Romanian");
+        videos.put(video107,"Romanian");
+        videos.put(video108,"Romanian");
+
+        //Mandarin 110 to 124
+        videos.put(video110,"Mandarin");
+        videos.put(video111,"Mandarin");
+        videos.put(video112,"Mandarin");
+        videos.put(video113,"Mandarin");
+        videos.put(video114,"Mandarin");
+        videos.put(video115,"Mandarin");
+        videos.put(video116,"Mandarin");
+        videos.put(video117,"Mandarin");
+        videos.put(video118,"Mandarin");
+        videos.put(video119,"Mandarin");
+        videos.put(video120,"Mandarin");
+        videos.put(video121,"Mandarin");
+        videos.put(video122,"Mandarin");
+        videos.put(video123,"Mandarin");
+        videos.put(video124,"Mandarin");
+
+        //German 125 to 139
+
+        videos.put(video125,"German");
+        videos.put(video126,"German");
+        videos.put(video127,"German");
+        videos.put(video128,"German");
+        videos.put(video129,"German");
+        videos.put(video130,"German");
+        videos.put(video131,"German");
+        videos.put(video132,"German");
+        videos.put(video133,"German");
+        videos.put(video134,"German");
+        videos.put(video135,"German");
+        videos.put(video136,"German");
+        videos.put(video137,"German");
+        videos.put(video138,"German");
+        videos.put(video139,"German");
+
+        //Icelandic 140 to 151
+
+        videos.put(video140,"Icelandic");
+        videos.put(video141,"Icelandic");
+        videos.put(video142,"Icelandic");
+        videos.put(video143,"Icelandic");
+        videos.put(video144,"Icelandic");
+        videos.put(video145,"Icelandic");
+        videos.put(video146,"Icelandic");
+        videos.put(video147,"Icelandic");
+        videos.put(video148,"Icelandic");
+        videos.put(video149,"Icelandic");
+        videos.put(video150,"Icelandic");
+        videos.put(video151,"Icelandic");
+
+
+        //Swedish 492 to 507
+
+        videos.put(video492,"Swedish");
+        videos.put(video493,"Swedish");
+        videos.put(video494,"Swedish");
+        videos.put(video495,"Swedish");
+        videos.put(video496,"Swedish");
+        videos.put(video497,"Swedish");
+        videos.put(video498,"Swedish");
+        videos.put(video499,"Swedish");
+        videos.put(video500,"Swedish");
+        videos.put(video501,"Swedish");
+        videos.put(video502,"Swedish");
+        videos.put(video503,"Swedish");
+        videos.put(video504,"Swedish");
+        videos.put(video505,"Swedish");
+        videos.put(video506,"Swedish");
+        videos.put(video507,"Swedish");
+
+        //Norwegian 153 to 167
+
+        videos.put(video153,"Norwegian");
+        videos.put(video154,"Norwegian");
+        videos.put(video155,"Norwegian");
+        videos.put(video156,"Norwegian");
+        videos.put(video157,"Norwegian");
+        videos.put(video158,"Norwegian");
+        videos.put(video159,"Norwegian");
+        videos.put(video160,"Norwegian");
+        videos.put(video161,"Norwegian");
+        videos.put(video162,"Norwegian");
+        videos.put(video163,"Norwegian");
+        videos.put(video164,"Norwegian");
+        videos.put(video165,"Norwegian");
+        videos.put(video166,"Norwegian");
+        videos.put(video167,"Norwegian");
+
+        //Dutch 168 to 182
+
+        videos.put(video168,"Dutch");
+        videos.put(video169,"Dutch");
+        videos.put(video170,"Dutch");
+        videos.put(video171,"Dutch");
+        videos.put(video172,"Dutch");
+        videos.put(video173,"Dutch");
+        videos.put(video174,"Dutch");
+        videos.put(video175,"Dutch");
+        videos.put(video176,"Dutch");
+        videos.put(video177,"Dutch");
+        videos.put(video178,"Dutch");
+        videos.put(video179,"Dutch");
+        videos.put(video180,"Dutch");
+        videos.put(video181,"Dutch");
+        videos.put(video182,"Dutch");
+
+
+        //Polish 183 to 197
+
+        videos.put(video184,"Polish");
+        videos.put(video185,"Polish");
+        videos.put(video186,"Polish");
+        videos.put(video187,"Polish");
+        videos.put(video188,"Polish");
+        videos.put(video189,"Polish");
+        videos.put(video190,"Polish");
+        videos.put(video191,"Polish");
+        videos.put(video192,"Polish");
+        videos.put(video193,"Polish");
+        videos.put(video194,"Polish");
+        videos.put(video195,"Polish");
+        videos.put(video196,"Polish");
+        videos.put(video197,"Polish");
+
+        //Russian 198 to 212
+        videos.put(video198,"Russian");
+        videos.put(video199,"Russian");
+        videos.put(video200,"Russian");
+        videos.put(video201,"Russian");
+        videos.put(video202,"Russian");
+        videos.put(video203,"Russian");
+        videos.put(video204,"Russian");
+        videos.put(video205,"Russian");
+        videos.put(video206,"Russian");
+        videos.put(video207,"Russian");
+        videos.put(video208,"Russian");
+        videos.put(video209,"Russian");
+        videos.put(video210,"Russian");
+        videos.put(video211,"Russian");
+        videos.put(video212,"Russian");
+
+
+        //Bulgarian 213 to 227
+        videos.put(video213,"Bulgarian");
+        videos.put(video214,"Bulgarian");
+        videos.put(video215,"Bulgarian");
+        videos.put(video216,"Bulgarian");
+        videos.put(video217,"Bulgarian");
+        videos.put(video218,"Bulgarian");
+        videos.put(video219,"Bulgarian");
+        videos.put(video220,"Bulgarian");
+        videos.put(video221,"Bulgarian");
+        videos.put(video222,"Bulgarian");
+        videos.put(video223,"Bulgarian");
+        videos.put(video224,"Bulgarian");
+        videos.put(video225,"Bulgarian");
+        videos.put(video226,"Bulgarian");
+        videos.put(video227,"Bulgarian");
+
+
+        //Faroese 228 to 241
+
+        videos.put(video228,"Faroese");
+        videos.put(video229,"Faroese");
+        videos.put(video230,"Faroese");
+        videos.put(video231,"Faroese");
+        videos.put(video232,"Faroese");
+        videos.put(video233,"Faroese");
+        videos.put(video234,"Faroese");
+        videos.put(video235,"Faroese");
+        videos.put(video236,"Faroese");
+        videos.put(video237,"Faroese");
+        videos.put(video238,"Faroese");
+        videos.put(video239,"Faroese");
+        videos.put(video240,"Faroese");
+        videos.put(video241,"Faroese");
+
+
+        //Serbian 242 to 258
+        videos.put(video242,"Serbian");
+        videos.put(video243,"Serbian");
+        videos.put(video244,"Serbian");
+        videos.put(video245,"Serbian");
+        videos.put(video246,"Serbian");
+        videos.put(video247,"Serbian");
+        videos.put(video248,"Serbian");
+        videos.put(video249,"Serbian");
+        videos.put(video250,"Serbian");
+        videos.put(video251,"Serbian");
+        videos.put(video252,"Serbian");
+        videos.put(video253,"Serbian");
+        videos.put(video254,"Serbian");
+        videos.put(video255,"Serbian");
+        videos.put(video256,"Serbian");
+        videos.put(video257,"Serbian");
+        videos.put(video258,"Serbian");
+        videos.put("yx1fiU2vgN0", "Serbian");
+
+        //Korean 259 to 273
+        videos.put(video259,"Korean");
+        videos.put(video260,"Korean");
+        videos.put(video261,"Korean");
+        videos.put(video262,"Korean");
+        videos.put(video263,"Korean");
+        videos.put(video264,"Korean");
+        videos.put(video265,"Korean");
+        videos.put(video266,"Korean");
+        videos.put(video267,"Korean");
+        videos.put(video268,"Korean");
+        videos.put(video269,"Korean");
+        videos.put(video270,"Korean");
+        videos.put(video271,"Korean");
+        videos.put(video272,"Korean");
+        videos.put(video273,"Korean");
+        videos.put("-mtlIhSY9W8", "Korean");
+
+        //Mongolian 274 to 288
+        videos.put(video274,"Mongolian");
+        videos.put(video275,"Mongolian");
+        videos.put(video276,"Mongolian");
+        videos.put(video277,"Mongolian");
+        videos.put(video278,"Mongolian");
+        videos.put(video279,"Mongolian");
+        videos.put(video280,"Mongolian");
+        videos.put(video281,"Mongolian");
+        videos.put(video282,"Mongolian");
+        videos.put(video283,"Mongolian");
+        videos.put(video284,"Mongolian");
+        videos.put(video285,"Mongolian");
+        videos.put(video286,"Mongolian");
+        videos.put(video287,"Mongolian");
+        videos.put(video288,"Mongolian");
+
+        //Japenese 299 to 313
+        videos.put(video299,"Japanese");
+        videos.put(video300,"Japanese");
+        videos.put(video301,"Japanese");
+        videos.put(video302,"Japanese");
+        videos.put(video303,"Japanese");
+        videos.put(video304,"Japanese");
+        videos.put(video305,"Japanese");
+        videos.put(video306,"Japanese");
+        videos.put(video307,"Japanese");
+        videos.put(video308,"Japanese");
+        videos.put(video309,"Japanese");
+        videos.put(video310,"Japanese");
+        videos.put(video311,"Japanese");
+        videos.put(video312,"Japanese");
+        videos.put(video313,"Japanese");
+
+        //Vietnamese 314 to 328
+
+        videos.put(video314,"Vietnamese");
+        videos.put(video315,"Vietnamese");
+        videos.put(video316,"Vietnamese");
+        videos.put(video317,"Vietnamese");
+        videos.put(video318,"Vietnamese");
+        videos.put(video319,"Vietnamese");
+        videos.put(video320,"Vietnamese");
+        videos.put(video321,"Vietnamese");
+        videos.put(video322,"Vietnamese");
+        videos.put(video323,"Vietnamese");
+        videos.put(video324,"Vietnamese");
+        videos.put(video325,"Vietnamese");
+        videos.put(video326,"Vietnamese");
+        videos.put(video327,"Vietnamese");
+        videos.put(video328,"Vietnamese");
+
+        //Cantonese 329 to 343
+        videos.put(video329,"Cantonese");
+        videos.put(video330,"Cantonese");
+        videos.put(video331,"Cantonese");
+        videos.put(video332,"Cantonese");
+        videos.put(video333,"Cantonese");
+        videos.put(video334,"Cantonese");
+        videos.put(video335,"Cantonese");
+        videos.put(video336,"Cantonese");
+        videos.put(video337,"Cantonese");
+        videos.put(video338,"Cantonese");
+        videos.put(video339,"Cantonese");
+        videos.put(video340,"Cantonese");
+        videos.put(video341,"Cantonese");
+        videos.put(video342,"Cantonese");
+        videos.put(video343,"Cantonese");
+
+
+        //Sanghainese 344 to 356
+        videos.put(video344,"Sanghainese");
+        videos.put(video345,"Sanghainese");
+        videos.put(video346,"Sanghainese");
+        videos.put(video347,"Sanghainese");
+        videos.put(video348,"Sanghainese");
+        videos.put(video349,"Sanghainese");
+        videos.put(video350,"Sanghainese");
+        videos.put(video351,"Sanghainese");
+        videos.put(video352,"Sanghainese");
+        videos.put(video353,"Sanghainese");
+        videos.put(video354,"Sanghainese");
+        videos.put(video355,"Sanghainese");
+        videos.put(video356,"Sanghainese");
+
+
+        //Thai 357 to 371
+
+        videos.put(video357,"Thai");
+        videos.put(video358,"Thai");
+        videos.put(video359,"Thai");
+        videos.put(video360,"Thai");
+        videos.put(video361,"Thai");
+        videos.put(video362,"Thai");
+        videos.put(video363,"Thai");
+        videos.put(video364,"Thai");
+        videos.put(video365,"Thai");
+        videos.put(video366,"Thai");
+        videos.put(video367,"Thai");
+        videos.put(video368,"Thai");
+        videos.put(video369,"Thai");
+        videos.put(video370,"Thai");
+        videos.put(video371,"Thai");
+
+
+        //Laotian 372 to 386
+        videos.put(video372,"Laotian");
+        videos.put(video373,"Laotian");
+        videos.put(video374,"Laotian");
+        videos.put(video375,"Laotian");
+        videos.put(video376,"Laotian");
+        videos.put(video377,"Laotian");
+        videos.put(video378,"Laotian");
+        videos.put(video379,"Laotian");
+        videos.put(video380,"Laotian");
+        videos.put(video381,"Laotian");
+        videos.put(video382,"Laotian");
+        videos.put(video383,"Laotian");
+        videos.put(video384,"Laotian");
+        videos.put(video385,"Laotian");
+        videos.put(video386,"Laotian");
+
+
+        //Persian 387 to 401
+
+        videos.put(video387,"Persian");
+        videos.put(video388,"Persian");
+        videos.put(video389,"Persian");
+        videos.put(video390,"Persian");
+        videos.put(video391,"Persian");
+        videos.put(video392,"Persian");
+        videos.put(video393,"Persian");
+        videos.put(video394,"Persian");
+        videos.put(video395,"Persian");
+        videos.put(video396,"Persian");
+        videos.put(video397,"Persian");
+        videos.put(video398,"Persian");
+        videos.put(video399,"Persian");
+        videos.put(video400,"Persian");
+        videos.put(video401,"Persian");
+
+        //Turkmen 402 to 416
+        videos.put(video402,"Turkmen");
+        videos.put(video403,"Turkmen");
+        videos.put(video404,"Turkmen");
+        videos.put(video405,"Turkmen");
+        videos.put(video406,"Turkmen");
+        videos.put(video407,"Turkmen");
+        videos.put(video408,"Turkmen");
+        videos.put(video409,"Turkmen");
+        videos.put(video410,"Turkmen");
+        videos.put(video411,"Turkmen");
+        videos.put(video412,"Turkmen");
+        videos.put(video413,"Turkmen");
+        videos.put(video414,"Turkmen");
+        videos.put(video415,"Turkmen");
+        videos.put(video416,"Turkmen");
+
+
+        //Kazakh 417 to 431
+
+        videos.put(video417,"Kazakh");
+        videos.put(video418,"Kazakh");
+        videos.put(video419,"Kazakh");
+        videos.put(video420,"Kazakh");
+        videos.put(video421,"Kazakh");
+        videos.put(video422,"Kazakh");
+        videos.put(video423,"Kazakh");
+        videos.put(video424,"Kazakh");
+        videos.put(video425,"Kazakh");
+        videos.put(video426,"Kazakh");
+        videos.put(video427,"Kazakh");
+        videos.put(video428,"Kazakh");
+        videos.put(video429,"Kazakh");
+        videos.put(video430,"Kazakh");
+        videos.put(video431,"Kazakh");
+
+
+        //Arabic 432 to 446
+
+        videos.put(video432,"Arabic");
+        videos.put(video433,"Arabic");
+        videos.put(video434,"Arabic");
+        videos.put(video435,"Arabic");
+        videos.put(video436,"Arabic");
+        videos.put(video437,"Arabic");
+        videos.put(video438,"Arabic");
+        videos.put(video439,"Arabic");
+        videos.put(video440,"Arabic");
+        videos.put(video441,"Arabic");
+        videos.put(video442,"Arabic");
+        videos.put(video443,"Arabic");
+        videos.put(video444,"Arabic");
+        videos.put(video445,"Arabic");
+        videos.put(video446,"Arabic");
+
+        //Amharic 447 to 461
+        videos.put(video447,"Amharic");
+        videos.put(video448,"Amharic");
+        videos.put(video449,"Amharic");
+        videos.put(video450,"Amharic");
+        videos.put(video451,"Amharic");
+        videos.put(video452,"Amharic");
+        videos.put(video453,"Amharic");
+        videos.put(video454,"Amharic");
+        videos.put(video455,"Amharic");
+        videos.put(video456,"Amharic");
+        videos.put(video457,"Amharic");
+        videos.put(video458,"Amharic");
+        videos.put(video459,"Amharic");
+        videos.put(video460,"Amharic");
+        videos.put(video461,"Amharic");
+        videos.put("VsrL9Rz-A5A", "Amharic");
+        videos.put("rRC6C8bRkQQ", "Amharic");
+        videos.put("-GoUKBHIKu4", "Amharic");
+
+
+        //Hebrew 462 to 476
+        videos.put(video462,"Hebrew");
+        videos.put(video463,"Hebrew");
+        videos.put(video464,"Hebrew");
+        videos.put(video465,"Hebrew");
+        videos.put(video466,"Hebrew");
+        videos.put(video467,"Hebrew");
+        videos.put(video468,"Hebrew");
+        videos.put(video469,"Hebrew");
+        videos.put(video470,"Hebrew");
+        videos.put(video471,"Hebrew");
+        videos.put(video472,"Hebrew");
+        videos.put(video473,"Hebrew");
+        videos.put(video474,"Hebrew");
+        videos.put(video475,"Hebrew");
+        videos.put(video476,"Hebrew");
+
+
+        //Azerbaijani 477 to 491
+
+        videos.put(video477,"Azerbaijani");
+        videos.put(video478,"Azerbaijani");
+        videos.put(video479,"Azerbaijani");
+        videos.put(video480,"Azerbaijani");
+        videos.put(video481,"Azerbaijani");
+        videos.put(video482,"Azerbaijani");
+        videos.put(video483,"Azerbaijani");
+        videos.put(video484,"Azerbaijani");
+        videos.put(video485,"Azerbaijani");
+        videos.put(video486,"Azerbaijani");
+        videos.put(video487,"Azerbaijani");
+        videos.put(video488,"Azerbaijani");
+        videos.put(video489,"Azerbaijani");
+        videos.put(video490,"Azerbaijani");
+        videos.put(video491,"Azerbaijani");
+
+
+        //Greek songs
+        videos.put("g36aAJAN5yg","Greek");
+        videos.put("SoGdeg2K81c","Greek");
+        videos.put("_sNzoHd2GnE","Greek");
+        videos.put("umzN2ujyARY","Greek");
+        videos.put("zg3JB07HV3k","Greek");
+        videos.put("Fr3CUyz2sVs","Greek");
+        videos.put("niqrjP1VDeY","Greek");
+        videos.put("-5pDGH9ktNo","Greek");
+        videos.put("fysw1kQKw_w","Greek");
+        videos.put("MKY7IK8heQk","Greek");
+        videos.put("jW5z-rZEQVI","Greek");
+        videos.put("daGLoE-6oB8","Greek");
+        videos.put("TICiufr2IEU","Greek");
+        videos.put("c0l5eFgUoqc","Greek");
+        videos.put("WCMTYQxbppk","Greek");
+
+        //Portuguese songs
+        videos.put("tdcK5D-SClk","Portuguese");
+        videos.put("wk4HK6f3ibk","Portuguese");
+        videos.put("o4QkUh1Lpso","Portuguese");
+        videos.put("Qxv9s3PTIzY","Portuguese");
+        videos.put("l_fNv8k5ZnA","Portuguese");
+        videos.put("3cTiDTedAkk","Portuguese");
+        videos.put("D-q3jaELQeo","Portuguese");
+        videos.put("__iql3TRlhw","Portuguese");
+        videos.put("KpFEn24TyuA","Portuguese");
+        videos.put("u_pTxVY3s60","Portuguese");
+        videos.put("bzhLamrxacE","Portuguese");
+        videos.put("3-uPAP30NuU","Portuguese");
+        videos.put("Q86lCtj1BYs","Portuguese");
+        videos.put("iiwEwbxXN74","Portuguese");
+        videos.put("OpdlQTOMzeM","Portuguese");
+        videos.put("V2vGc2GsH-A","Portuguese");
+
+        //Uzbek songs
+        videos.put("dA_V22Bk5_g","Uzbek");
+        videos.put("dnBUJJ7RUIs","Uzbek");
+        videos.put("0Yzit7B4Eck","Uzbek");
+        videos.put("gehDc1sJh5M","Uzbek");
+        videos.put("c_uaA5wUbig","Uzbek");
+        videos.put("C4vq7JK7pxs","Uzbek");
+        videos.put("XZacpp38fBQ","Uzbek");
+        videos.put("o_9jOI89gW4","Uzbek");
+        videos.put("YDqt4NmpurE","Uzbek");
+        videos.put("jykarC07Cbs","Uzbek");
+        videos.put("IdEr8xTCL4E","Uzbek");
+        videos.put("OrfK6R8hgsI","Uzbek");
+        videos.put("5Bkeil0ejP8","Uzbek");
+        videos.put("ectM1UkKNuw","Uzbek");
+        videos.put("cM0L1EpOyP8","Uzbek");
+
+        //Tajik songs
+        videos.put("jd1jUOCU428","Tajik");
+        videos.put("kxbwfrtN3DE","Tajik");
+        videos.put("4T9a9Jfuu8U","Tajik");
+        videos.put("Zhimvhxk9dA","Tajik");
+        videos.put("Ot4sJo-zte4","Tajik");
+        videos.put("w6KESF6OACA","Tajik");
+        videos.put("33_oTItuCn0","Tajik");
+        videos.put("6dnQwPIH-Wo","Tajik");
+        videos.put("BUOp9K3ulT4","Tajik");
+        videos.put("w3m5tSThEmc","Tajik");
+        videos.put("LreiGotE0tE","Tajik");
+        videos.put("W5GDH4lc5no","Tajik");
+        videos.put("M5Ux7vF2BSM","Tajik");
+        videos.put("AfJsiMK6rUQ","Tajik");
+
+        //Basque songs
+        videos.put("CFQ_gcNHu7c","Basque");
+        videos.put("LRaeakNECr8","Basque");
+        videos.put("0wc-_ClMNGs","Basque");
+        videos.put("c88TBQKiImg","Basque");
+        videos.put("f1BQsyitRDE","Basque");
+        videos.put("mnBK1CFGDrU","Basque");
+        videos.put("3HnIpcAoEUQ","Basque");
+        videos.put("Ej2XLHbfF-s","Basque");
+        videos.put("kG0kC83qfR8","Basque");
+        videos.put("lqb-rvrWYZo","Basque");
+        videos.put("0j_nv0Z6BFk","Basque");
+        videos.put("nJQmOx3RxDw","Basque");
+        videos.put("SRCeAGf-4-A","Basque");
+        videos.put("pHIxYlmAQAs","Basque");
+        videos.put("gHcllrUYqs8","Basque");
+
+        //Sicilian songs
+        videos.put("dvV8TaLOV-Y","Sicilian");
+        videos.put("oNpxosJFbfw","Sicilian");
+        videos.put("sqFncGFhKp0","Sicilian");
+        videos.put("4cG6pbwx_dw","Sicilian");
+        videos.put("JYbTbF2yVYI","Sicilian");
+        videos.put("TcmGYF6c9M","Sicilian");
+        videos.put("si5Supq4u7w","Sicilian");
+        videos.put("gnvLKoSqY3k","Sicilian");
+        videos.put("CQh8EG-_OWo","Sicilian");
+        videos.put("YJbFtppBy2c","Sicilian");
+        videos.put("ErKViyqRWQM","Sicilian");
+        videos.put("-xKXmv8rkbA","Sicilian");
+        videos.put("RtFAN0_pjXg","Sicilian");
+        videos.put("6xZS8YZpnO8","Sicilian");
+        videos.put("0oaTOFsbjtk","Sicilian");
+
+        //Occitan songs
+        videos.put("Wr2v_s7hvAU","Occitan");
+        videos.put("Ym3lcspbr-4","Occitan");
+        videos.put("gkmbuzekO8g","Occitan");
+        videos.put("cRL_WmBy2Uw","Occitan");
+        videos.put("OHz1cLTkpQI","Occitan");
+        videos.put("TpR72S21BZU","Occitan");
+        videos.put("rpzbtdZjHVc","Occitan");
+        videos.put("iTXQ5kmaOx4","Occitan");
+        videos.put("l6gT_YSH7oo","Occitan");
+        videos.put("nRykQMzNcmE","Occitan");
+        videos.put("cIUHL9bWYcE","Occitan");
+        videos.put("9dOETzAYEI4","Occitan");
+        videos.put("icglGvqqR6A","Occitan");
+
+        //Italian songs
+        videos.put("ARqpqyA49y0","Italian");
+        videos.put("RELQXv8m_cc","Italian");
+        videos.put("UEgwLD5OYAw","Italian");
+        videos.put("DoASbjgzQDI","Italian");
+        videos.put("FSea1YPxK1c","Italian");
+        videos.put("4R5mDpIgwUs","Italian");
+        videos.put("7Fmpz-wIkPY","Italian");
+        videos.put("4QhyYngmW0I","Italian");
+        videos.put("4m_eblAB-fs","Italian");
+        videos.put("zO802boBh_M","Italian");
+        videos.put("a05CoMDB7Ak","Italian");
+        videos.put("eKjMDrHU0HU","Italian");
+        videos.put("gPTUbz_uQlI","Italian");
+        videos.put("ohwFbV-6-2M","Italian");
+        videos.put("ORKJVgdw7Qo","Italian");
+
+        //Galician songs
+        videos.put("5iRW95P1LRY","Galician");
+        videos.put("7pB0fKhimBI","Galician");
+        videos.put("EFHsKPsuMY4","Galician");
+        videos.put("5iaUSxCHR1c","Galician");
+        videos.put("QroCGJ6oSis","Galician");
+        videos.put("Xnx73C7n5xk","Galician");
+        videos.put("fZ83671VzbM","Galician");
+        videos.put("Fne8OAa19Qg","Galician");
+        videos.put("jif6bg-t7bU","Galician");
+        videos.put("ItWND7U1FG4","Galician");
+        videos.put("EZU3XqtrwG0","Galician");
+        videos.put("dI_xTdHKPY8","Galician");
+        videos.put("A6XybeZnn5I","Galician");
+        videos.put("DviI2zrdtJ0","Galician");
+
+        //Catalan  songs
+        videos.put("P5rYVt5e5OM","Catalan");
+        videos.put("3LEOkTgs3oo","Catalan");
+        videos.put("i_MBNLqkztg","Catalan");
+        videos.put("TDZmoOJUMPw","Catalan");
+        videos.put("3Uqzy44mxLc","Catalan");
+        videos.put("xeha5FAJq38","Catalan");
+        videos.put("z_KKamyi_rw","Catalan");
+        videos.put("aX4eZ1fpYwA","Catalan");
+        videos.put("H3BUfpZuuLg","Catalan");
+        videos.put("BeH2eH9iPw4","Catalan");
+        videos.put("Z5LVw2abUlw","Catalan");
+        videos.put("aYVsvRN6J-w","Catalan");
+        videos.put("uFidI51D-ko","Catalan");
+        videos.put("MI19iKuNeHg","Catalan");
+        videos.put("VL3SUJjIcSI","Catalan");
+        videos.put("bqrGpS_Mbp4","Catalan");
+
+        //Neapolitan songs
+        videos.put("gfdxy41dUUg","Neapolitan");
+        videos.put("Zv_n0X1nkTo","Neapolitan");
+        videos.put("AWQcDlHoE4o","Neapolitan");
+        videos.put("wwyvwnzD7LY","Neapolitan");
+        videos.put("jXfBn3q6fd0","Neapolitan");
+        videos.put("j1ewwkIApUE","Neapolitan");
+        videos.put("HvmB_3V1u44","Neapolitan");
+        videos.put("A4nmmrwvBj8","Neapolitan");
+        videos.put("OpLIPTC0uC4","Neapolitan");
+        videos.put("zeLb-G8GXfk","Neapolitan");
+        videos.put("BNHJ9SPc-Js","Neapolitan");
+        videos.put("zRV7RAg5iyA","Neapolitan");
+        videos.put("5mc1BAxFbXY","Neapolitan");
+        videos.put("0-LKz0H1Te8","Neapolitan");
+
+        //Hakka songs
+        videos.put("vCqNyg-5TXY","Hakka");
+        videos.put("zVJb4zEYous","Hakka");
+        videos.put("73Ctje_SGg4","Hakka");
+        videos.put("5QnQBMdEdu8","Hakka");
+        videos.put("A-PbyPjIkZg","Hakka");
+        videos.put("bhcj5gApSd4","Hakka");
+        videos.put("-9S4UWdXo8E","Hakka");
+        videos.put("tH-AZNBL63o","Hakka");
+        videos.put("5Tl87kZAzwc","Hakka");
 
     }
 
     public HashMap<String,String> getVideos(){
         return videos;
 
+    }
+
+    public ArrayList<String> getFamily1(){
+        return langFamily1;
+    }
+
+    public ArrayList<String> getFamily2(){
+        return langFamily2;
+    }
+
+    public ArrayList<String> getFamily3(){
+        return langFamily3;
+    }
+    public ArrayList<String> getFamily4(){
+        return langFamily4;
+    }
+
+    public ArrayList<String> getAllLanguages(){
+        return allLanguages;
     }
 
 
