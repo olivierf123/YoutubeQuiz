@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView drawer_Player_username, drawer_Player_Score;
 
     //Click listener for the bottom navigation bar. Each button opens a new fragment that replaces the main_frame
-    //TODO mettre listener dans une interface? Regarder comment faire
     private BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
