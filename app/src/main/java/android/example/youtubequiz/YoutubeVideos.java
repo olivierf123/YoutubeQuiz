@@ -623,7 +623,6 @@ public class YoutubeVideos {
         langFamily1.add("Portuguese");
         langFamily1.add("Occitan");
         langFamily1.add("Sicilian");
-        langFamily1.add("Sicilian");
         langFamily1.add("Neapolitan");
         langFamily1.add("Greek");
         langFamily1.add("Basque");

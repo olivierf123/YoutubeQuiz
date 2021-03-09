@@ -39,7 +39,6 @@ public class SongGameFragment extends Fragment {
     private YouTubePlayerView youtubePlayerView;
     private Button btnAnswer1, btnAnswer2, btnAnswer3, btnAnswer4,btnAnswer5,
             btnPositiveNextQuestion, btnNegativeNextQuestion;
-
     private PlayerUiController playerUiController;
     private TextView titleTv, messageTv;
     private YouTubePlayerView youtubeplayer;
@@ -49,9 +48,9 @@ public class SongGameFragment extends Fragment {
     private ArrayList<String> easyList;
     private ArrayList<String> mediumList;
     private ArrayList<String> hardList;
+    private int numberFamily = 1;
 
     //TODO a la place du total score pour le player, mettre le Highest score dans une game pour le leadeboard.
-
 
     public SongGameFragment() {
         // Required empty public constructor
@@ -75,7 +74,6 @@ public class SongGameFragment extends Fragment {
 
         initYouTubePlayerView();
         //randomVid = (String) YoutubeVideos.youtubevideos.getVideos().keySet().toArray()[new Random().nextInt(YoutubeVideos.youtubevideos.getVideos().keySet().toArray().length)];
-
 
 
         //Set buttons
@@ -111,12 +109,11 @@ public class SongGameFragment extends Fragment {
 
         //If game difficulty is set to Hard
         if (DifficultyModel.getDifficultyGame().equals("hard")){
-           //TODO
-
+           hardList = getHardList(YoutubeVideos.youtubevideos.getVideos());
+           Random rand = new Random();
+           randomVid = hardList.get(rand.nextInt(hardList.size()));
 
         }
-
-
 
         /***
          * Easy Difficulty
@@ -180,7 +177,6 @@ public class SongGameFragment extends Fragment {
 
 
             btnAnswer1.setOnClickListener(v -> {
-                //TODO change le equals pour que ca fonctionne
 
                 if (randomVidLanguage.equals(btnAnswer1.getText())) {
                     showPositivePopup();
@@ -216,7 +212,6 @@ public class SongGameFragment extends Fragment {
 
             });
         }
-
 
         /***
          * Medium Difficulty (1 random language from each language family list
@@ -338,27 +333,166 @@ public class SongGameFragment extends Fragment {
 
                 });
 
-
-
             }
-
-
 
         /***
          * Hard Difficulty
          */
 
             if(DifficultyModel.getDifficultyGame().equals("hard")){
+                //TODO HARD MODE : 5 langues, même family de langues
 
-                //TODO HARD MODE : 5 langues, même family
+                Random rand2 = new Random();
+
+                //Create a List of hard languages (from the random family)
+                ArrayList<String> pickHardLanguages = new ArrayList<>();
+                switch(numberFamily){
+                    case 1 :
+                        pickHardLanguages = YoutubeVideos.youtubevideos.getFamily1();
+                        break;
+                    case 2:
+                        pickHardLanguages = YoutubeVideos.youtubevideos.getFamily2();
+                        break;
+                    case 3:
+                        pickHardLanguages = YoutubeVideos.youtubevideos.getFamily3();
+                        break;
+                    case 4:
+                        pickHardLanguages = YoutubeVideos.youtubevideos.getFamily4();
+                        break;
+                }
+
+                //returns the language of the random video
+                String randomVidLanguage = pickHardLanguages.get(rand2.nextInt(pickHardLanguages.size()));
+
+                //Set answer language in a random button between the 5 answer buttons
+                Random rand = new Random();
+                int randButton = rand.nextInt((5-1)+1) + 1;
+                if (randButton == 1){
+                    btnAnswer1.setText(randomVidLanguage);
+                }else if (randButton == 2){
+                    btnAnswer2.setText(randomVidLanguage);
+                }else if (randButton == 3){
+                    btnAnswer3.setText(randomVidLanguage);
+                }else if (randButton == 4) {
+                    btnAnswer4.setText(randomVidLanguage);
+                }else if (randButton == 5) {
+                    btnAnswer4.setText(randomVidLanguage);
+                }
+
+                //Get 4 other random languages for the 4 other buttons
+
+                String randomLanguage = pickHardLanguages.get(rand2.nextInt(pickHardLanguages.size()));
+
+                //While loop to make sure it's not the same language that is randomized
+                while (randomLanguage.equals(randomVidLanguage)){
+                    randomLanguage = pickHardLanguages.get(rand2.nextInt(pickHardLanguages.size()));
+                }
+
+                String randomLanguage2 = pickHardLanguages.get(rand2.nextInt(pickHardLanguages.size()));
+
+                while (randomLanguage2.equals(randomVidLanguage) | randomLanguage2.equals(randomLanguage)){
+                    randomLanguage2 = pickHardLanguages.get(rand2.nextInt(pickHardLanguages.size()));
+                }
+
+                String randomLanguage3 = pickHardLanguages.get(rand2.nextInt(pickHardLanguages.size()));
+
+                while (randomLanguage3.equals(randomVidLanguage) | randomLanguage3.equals(randomLanguage) | randomLanguage3.equals(randomLanguage2)){
+                    randomLanguage3 = pickHardLanguages.get(rand2.nextInt(pickHardLanguages.size()));
+
+                }
+
+                String randomLanguage4 = pickHardLanguages.get(rand2.nextInt(pickHardLanguages.size()));
+
+                while (randomLanguage4.equals(randomVidLanguage) | randomLanguage4.equals(randomLanguage) |
+                        randomLanguage4.equals(randomLanguage2) | randomLanguage4.equals(randomLanguage3)){
+                    randomLanguage4 = pickHardLanguages.get(rand2.nextInt(pickHardLanguages.size()));
+                }
+
+                //Set the random selected languages to the buttons
+                if ((btnAnswer1.getText().equals(randomVidLanguage))){
+                    btnAnswer2.setText(randomLanguage);
+                    btnAnswer3.setText(randomLanguage2);
+                    btnAnswer4.setText(randomLanguage3);
+                    btnAnswer5.setText(randomLanguage4);
+                }else if (btnAnswer2.getText().equals(randomVidLanguage)){
+                    btnAnswer1.setText(randomLanguage);
+                    btnAnswer3.setText(randomLanguage2);
+                    btnAnswer4.setText(randomLanguage3);
+                    btnAnswer5.setText(randomLanguage4);
+                }else if (btnAnswer3.getText().equals(randomVidLanguage)){
+                    btnAnswer1.setText(randomLanguage);
+                    btnAnswer2.setText(randomLanguage2);
+                    btnAnswer4.setText(randomLanguage3);
+                    btnAnswer5.setText(randomLanguage4);
+                }else if (btnAnswer4.getText().equals(randomVidLanguage)){
+                    btnAnswer1.setText(randomLanguage);
+                    btnAnswer2.setText(randomLanguage2);
+                    btnAnswer3.setText(randomLanguage3);
+                    btnAnswer5.setText(randomLanguage4);
+                }else if (btnAnswer5.getText().equals(randomVidLanguage)){
+                    btnAnswer1.setText(randomLanguage);
+                    btnAnswer2.setText(randomLanguage2);
+                    btnAnswer3.setText(randomLanguage3);
+                    btnAnswer4.setText(randomLanguage4);
+
+                }
+
+                btnAnswer1.setOnClickListener(v -> {
+
+                    if (randomVidLanguage.equals(btnAnswer1.getText())) {
+                        showPositivePopup();
+                        PlayerModel.addrightAnswers();
+                    }else {
+                        PlayerLosingLives(); // Player loses a life and looks if player lost the game
+                        PlayerModel.addWrongAnswers();
+                    }
+                });
+
+
+                btnAnswer2.setOnClickListener(v -> {
+                    if (randomVidLanguage.equals(btnAnswer2.getText())){
+                        showPositivePopup();
+                        PlayerModel.addrightAnswers();
+
+                    }else{
+                        PlayerLosingLives(); // Player loses a life and looks if player lost the game
+                        PlayerModel.addWrongAnswers();
+                    }
+
+                });
+
+                btnAnswer3.setOnClickListener(v -> {
+                    if (randomVidLanguage.equals(btnAnswer3.getText())){
+                        showPositivePopup();
+                        PlayerModel.addrightAnswers();
+
+                    }else{
+                        PlayerLosingLives(); // Player loses a life and looks if player lost the game
+                        PlayerModel.addWrongAnswers();
+                    }
+
+                });
+
+                btnAnswer4.setOnClickListener(v -> {
+                    if (randomVidLanguage.equals(btnAnswer4.getText())){
+                        showPositivePopup();
+                        PlayerModel.addrightAnswers();
+
+                    }else{
+                        PlayerLosingLives(); // Player loses a life and looks if player lost the game
+                        PlayerModel.addWrongAnswers();
+                    }
+
+
+                });
 
             }
 
-
-
        return view;
 
-    }
+
+
+  }
 
     private void initYouTubePlayerView() {
         getLifecycle().addObserver(youtubeplayer);
@@ -501,14 +635,65 @@ public class SongGameFragment extends Fragment {
 
     }
 
-    public void getHardHashMap(){
-        // TODO
+    public ArrayList<String> getHardList(HashMap<String, String> myhashmap){
 
+        ArrayList<String> hardList = new ArrayList<>();
+        Random rand = new Random();
+        String vid1 = null,vid2 = null,vid3 = null,vid4 = null;
 
+        //Get a random family.
+        int randomFamily = rand.nextInt((4-3) + 1) + 1;
+
+        //TODO Faire facon plus efficient. Modifier.
+        //get randomFamily
+        switch(randomFamily){
+            case 1:
+                vid1 = YoutubeVideos.youtubevideos.getFamily1().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily1().size()));
+                vid2 = YoutubeVideos.youtubevideos.getFamily2().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily1().size()));
+                vid3 = YoutubeVideos.youtubevideos.getFamily3().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily1().size()));
+                vid4 = YoutubeVideos.youtubevideos.getFamily4().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily1().size()));
+                numberFamily=1;
+                break;
+            case 2:
+                vid1 = YoutubeVideos.youtubevideos.getFamily1().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily2().size()));
+                vid2 = YoutubeVideos.youtubevideos.getFamily2().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily2().size()));
+                vid3 = YoutubeVideos.youtubevideos.getFamily3().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily2().size()));
+                vid4 = YoutubeVideos.youtubevideos.getFamily4().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily2().size()));
+                numberFamily=2;
+                break;
+            case 3:
+                vid1 = YoutubeVideos.youtubevideos.getFamily1().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily3().size()));
+                vid2 = YoutubeVideos.youtubevideos.getFamily2().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily3().size()));
+                vid3 = YoutubeVideos.youtubevideos.getFamily3().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily3().size()));
+                vid4 = YoutubeVideos.youtubevideos.getFamily4().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily3().size()));
+                numberFamily=3;
+                break;
+            case 4:
+                vid1 = YoutubeVideos.youtubevideos.getFamily1().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily4().size()));
+                vid2 = YoutubeVideos.youtubevideos.getFamily2().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily4().size()));
+                vid3 = YoutubeVideos.youtubevideos.getFamily3().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily4().size()));
+                vid4 = YoutubeVideos.youtubevideos.getFamily4().get(rand.nextInt(YoutubeVideos.youtubevideos.getFamily4().size()));
+                numberFamily=4;
+                break;
+        }
+
+        for (Map.Entry<String, String> entry: myhashmap.entrySet()){
+            if(entry.getValue().equals(vid1)) {
+                hardList.add(entry.getKey());
+
+            }else if (entry.getValue().equals(vid2)){
+                hardList.add(entry.getKey());
+
+            }else if (entry.getValue().equals(vid3)){
+                hardList.add(entry.getKey());
+
+            }else if (entry.getValue().equals(vid4)){
+                hardList.add(entry.getKey());
+            }
+        }
+        return hardList;
 
     }
-
-
 }
 
 

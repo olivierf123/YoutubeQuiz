@@ -20,7 +20,5 @@ public class AudioGameActivity_TODO extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio_game__t_o_d_o);
 
-
-
     }
 }
